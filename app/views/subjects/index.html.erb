@@ -1,8 +1,11 @@
+<h1>Subjects</h1>
+<div class="actions">
+  <%= link_to 'New Subject', new_subject_path, class: 'btn btn-primary btn-sm' %>
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Subjects</h1>
-
-<table>
+<table class="table-responsive" id="subjects">
   <thead>
     <tr>
       <th>Title</th>
@@ -20,12 +23,8 @@
         <td><%= subject.status %></td>
         <td><%= link_to 'Show', subject %></td>
         <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'delete' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Subject', new_subject_path %>
